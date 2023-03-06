@@ -1,0 +1,253 @@
+<!--Base Template of our Website-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--Google Fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+
+  <!--Bootstrap CSS-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+  <!--FontAwesome CSS Icons-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <title>{% block title%}Aincrad Railways{%endblock%}</title>
+
+  <style>
+    section {
+      padding: 60px 0;
+    }
+
+    .home-bg {
+      overflow: hidden;
+      background: linear-gradient(90deg, rgba(0, 0, 0, .35) 0%, rgba(0, 0, 0, .35) 100%), url('/static/assets/homebg.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: auto;
+    }
+
+    html {
+      overflow: scroll;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    .logo {
+      font-family: 'Fredoka One', cursive;
+    }
+
+    .navbar {
+      background-color: rgba(0, 0, 0, .9);
+    }
+
+    .nav-link {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .nav-link:hover {
+      color: rgba(255, 255, 255, 1);
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px !important;
+      background-color: rgb(36, 37, 39);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+      background-color: lightgreen;
+    }
+
+    body {
+      scroll-behavior: smooth;
+      background: #ECE9E6;
+      background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+
+    a:hover {
+      text-decoration: none;
+      color: rgba(255, 255, 255, .8);
+    }
+
+    .divider {
+      position: relative;
+      margin: 30px 0;
+      height: 1px;
+    }
+
+    .div-transparent:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 5%;
+      right: 5%;
+      width: 90%;
+      height: 1px;
+      background-image: linear-gradient(to right, transparent, rgb(48, 49, 51), transparent);
+    }
+
+    .div-arrow-down:after {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      top: -7px;
+      left: calc(50% - 7px);
+      width: 14px;
+      height: 14px;
+      transform: rotate(45deg);
+      background-color: white;
+      border-bottom: 1px solid rgb(48, 49, 51);
+      border-right: 1px solid rgb(48, 49, 51);
+    }
+
+    /*About Page Styles*/
+    .abt-intro-bg {
+      background: linear-gradient(120deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, .95) 100%), url('/static/assets/abt-bg.jpg');
+      background-position: bottom;
+      background-size: cover;
+      background-repeat: none;
+      height: 100vh;
+    }
+
+    /*Contact Page Styles*/
+    .contact-bg {
+      background: linear-gradient(120deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, .95) 100%), url('/static/assets/contact-bg.jpg');
+      background-position: bottom;
+      background-size: cover;
+      background-repeat: none;
+    }
+
+    /*signup&Login Page Styles*/
+    .login-signup-bg {
+      background: linear-gradient(120deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, .95) 100%), url('/static/assets/signup-login-bg.jpg');
+      background-position: bottom;
+      background-size: cover;
+      background-repeat: none;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!--Navbar -->
+  <nav class="navbar navbar-expand-md fw-bold">
+    <div class="container-xl">
+      <a href="/" class="navbar-brand">
+        <h1 class="logo">RoBoard</h1>
+      </a>
+      <!--toggle for mobile devices-->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav"
+        aria-controls="main-nav" aria-expanded="false" aria-label="Toggle Navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!--Navbar Links-->
+      <div class="collapse navbar-collapse justify-content-end align-center" id="main-nav">
+
+        <div class="navbar-nav">
+          {% if user.is_authenticated %}
+          <a href="/" class="nav-item nav-link">Home</a>
+          <!-- <a href="/concept-cars" class="nav-item nav-link">Concept Cars</a> -->
+          <a href="/about" class="nav-item nav-link">About</a>
+          <a href="/contact" class="nav-item nav-link">Contact</a>
+          <!-- <a href="/profile" class="nav-item nav-link">Profile</a> -->
+          <a href="/logout" class="nav-item ms-2 d-none d-md-inline btn btn-light">Logout</a>
+          {% else %}
+          <a href="/" class="nav-item nav-link">Home</a>
+          <!-- <a href="/concept-cars" class="nav-item nav-link">Concept Cars</a> -->
+          <a href="/about" class="nav-item nav-link">About</a>
+          <a href="/contact" class="nav-item nav-link">Contact</a>
+          <a href="/login" class="nav-item ms-2 d-none d-md-inline btn btn-light">Login/SignUp</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!--Navbar -->
+
+  <!--Displaying error messages-->
+  {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+  {% for category, message in messages %}
+  {% if category == "error" %}
+  <!--Alert Error-->
+  <div class="m-0 alert alert-danger alert-dismissable fade show" role="alert">
+    {{ message }}
+    <button class="close" data-dismiss="alert" type="button">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  {% else %}
+  <!--Alert success-->
+  <div class="m-0 alert alert-success alert-dismissable fade show" role="alert">
+    {{ message }}
+    <button class="close" data-dismiss="alert" type="button">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  {% endif %}
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
+  <!--Displaying error messages-->
+
+  <!--Jinja content Block-->
+  {% block content %}
+  {% endblock %}
+  <!--Jinja endblock-->
+
+
+
+  <!-- Footer -->
+  {% block footer %}
+  <footer class="page-footer font-small text-light border-top" style="background-color: rgba(0,0,0,.9);">
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2022 Copyright
+      <a href="#"> RoBoard.com</a>
+    </div>
+  </footer>
+  {% endblock %}
+  <!-- Footer -->
+
+
+  <!--Bootstrap JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+    crossorigin="anonymous"></script>
+
+  <!--Linking JS to Jinja Template-->
+  <script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
+
+</body>
+
+</html>

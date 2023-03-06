@@ -1,0 +1,39 @@
+
+{% extends "base.html" %}
+{% block title %} Login - RoBoard {% endblock %}
+
+{% block content%}
+        <div class="container-xxl py-5 login-signup-bg">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-5 bg-light py-4 px-5 rounded-3 shadow-lg">
+                    <h1 class="display-5 logo text-danger text-center mt-3"><i class="bi bi-stars pe-3"></i>RoBoard<i class="bi bi-stars ps-3"></i></h1>
+                    <div class="divider div-transparent div-arrow-down my-3"></div>
+                    <p class="mb-2 fs-4 text-center fw-bold">Login To Your Account.</p>
+                    <p class="mb-3 fs-6 text-center">Plese enter your details.</p>
+                    <form method="POST">
+                        <!-- Email input -->
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email">
+                            <label for="floatingInput">Email address</label>
+                        </div>
+                        
+                        <!-- Password input -->
+                        <div class="form-floating mb-4">
+                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
+                            <label for="floatingPassword">Password</label>
+                        </div>
+                    
+                        <!-- Submit button -->
+                        <button type="submit" class="btn btn-dark btn-block mb-4">Sign in</button>
+                    
+                        <!-- Register buttons -->
+                        <div class="text-center">
+                            <a class="text-primary" href="#">Forgot password?</a>
+                            <p>Don't have a account? <a href="/sign-up" class="text-primary">Register</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}

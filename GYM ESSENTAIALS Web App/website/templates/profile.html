@@ -1,0 +1,76 @@
+<!--Extendind base.html-->
+
+{% extends "base.html" %}
+{% block title %} {% print(user.name) %} - Profile {% endblock %}
+
+
+{% block content %}
+    <div class="container-xxl" style="background-color: rgba(0, 0, 0, 0.9);">
+        <div class="row justify-content-center align-items-center text-white">
+            <div class="col-md-8 text-dark">
+                <div class="card my-5 shadow p-5">
+                    <div>
+                        <h1 class="text-center">Profile</h1>
+                        <hr class="mx-auto mb-5 rounded-3" style="width:60%; height:5px;">
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="fs-5" style="list-style: none;">
+                            <li><b>Username :</b> {% print(user.name) %}</li> </li>
+                            <li><b>Mobile :</b> {% print(user.mobile) %}</li>
+                            <li><b>Email  :</b> {% print(user.email) %}</li>
+                            <li><b>UserId :</b> {% print(user.id) %}</li>
+                        </div>
+                        <div>
+                            <img style="border-radius: 100%;" src="/static/assets/default-avatar.png" class="img-fluid shadow" width="200px" height="auto" >
+                        </div>
+                    </div>
+                    <div class="text-right mt-5 fw-bold" >
+                        <a style="color:rgba(0,0,0,.75);" href="">Change Password</a><br>
+                        <a style="color:rgba(0,0,0,.75);" href="">Account Settings</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center align-items-center text-white">
+            <div class="col-md-8">
+                <div class="card text-dark p-5 my-5 shadow">
+                    <div>
+                        <h1 class="text-center"><i class="bi bi-stars pe-3"></i>Booking<i class="ps-3 bi bi-stars"></i></h1>
+                        <div class="divider div-transparent div-arrow-down my-3"></div>
+                    </div>
+                    <div>
+                        {% if user.cars %}
+                            {% for car in user.cars%}
+                                <div class="card my-3 py-4 px-5 shadow" style="list-style:none;background-color: rgba(0,0,0,.05);">
+                                    <h1 class="text-center fw-bold text-uppercase">{% print(car.car_name ) %}</h1>
+                                    <hr class="mb-4" style="width:70%; height:2px; margin:0 auto;">
+                                    <div class="mx-4">
+                                        
+                                        {% for car_detail in car_details %}
+                                            {% if car_detail.model == car.car_model %}
+                                                <p class="fs-1">{% print(car_detail.price) %}</p>
+                                                <h5><span class="fw-bold">Model No : </span>{% print(car.car_model)%}</h5>
+                                                <h5><span class="fw-bold">Release Year : </span>{% print(car_detail.release_year) %}</h5>
+                                                
+                                            {% endif %}
+                                        {% endfor %}
+                                        <hr class="my-4">
+                                        <li><span class="fw-bold">Booking Name : </span>{% print(car.booking_name) %}</li>
+                                        <li><span class="fw-bold">Contact Email : </span>{% print(car.contact_email) %}</li>
+                                        <li><span class="fw-bold">Mobile : </span>{% print(car.contact_mobile) %}</li>
+                                        <li><span class="fw-bold">Delivary Address : </span>{% print(car.contact_address) %}</li>
+                                        <li><span class="fw-bold">Booked Date : </span>{% print(car.booking_date) %}</li>
+                                        <li><span class="fw-bold">Devilary Date : </span>{% print(car.delivary_date) %}</li>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                        {% if not user.cars %}
+                            <p class="fst-italic fs-5 text-muted text-center mt-4">No Booking details available..!!!!</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

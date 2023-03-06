@@ -1,0 +1,71 @@
+<!--Extendind base.html-->
+
+{% extends "base.html" %}
+{% block title %} About - RoBoard {% endblock %}
+
+
+{% block content %}
+    <div class="container-xxl mb-5">
+        <div class="row justify-content-center my-5">
+            <div id="carouselExampleDark" class="carousel carousel-dark slide col-md-8" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="card carousel-item active" data-bs-interval="10000">
+                        <img src="/static/assets/Concept/2019 Toyota LQ Concept/1.jpg" class="img-fluid d-block w-100" alt="">
+                        <div class="carousel-caption d-none d-md-block">
+                        </div>
+                    </div>
+                    <div class="card carousel-item" data-bs-interval="2000">
+                        <img src="/static/assets/Concept/2019 Toyota LQ Concept/2.jpg" class="img-fluid d-block w-100" alt="">
+                        <div class="carousel-caption d-none d-md-block">
+                        </div>
+                    </div>
+                    <div class="card carousel-item">
+                        <img src="/static/assets/Concept/2019 Toyota LQ Concept/3.jpg" class="img-fluid d-block w-100" alt="">
+                        <div class="carousel-caption d-none d-md-block">
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-8 text-center">
+                <h2 class="fw-bold text-danger mb-3"><i class="bi bi-suit-diamond-fill pe-3"></i>Toyota LQ Concept<i class="ps-3 bi bi-suit-diamond-fill"></i></h2>
+                <h1 class="display-4 text-uppercase mb-5">Introducing The Future</h1>
+                <div class="text-justify">
+                    <p style="text-indent: 50px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quidem cupiditate inventore nemo veniam dolorem mollitia, saepe dolores eveniet non facere! Porro suscipit fugiat ipsa. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente natus doloremque, libero harum excepturi numquam.</p>
+                    <p style="text-indent: 80px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi qui modi fugiat voluptatem accusamus tempora amet quas facilis, esse hic? Reprehenderit distinctio assumenda esse quos adipisci qui saepe ratione omnis ad impedit. Cumque, voluptatum voluptatem in fugit laborum repellendus eligendi?</p>
+                    <p style="text-indent: 50px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime voluptas eaque blanditiis accusantium tempore excepturi. Rem delectus quaerat ratione quam iste dolores placeat blanditiis expedita? Molestiae harum repudiandae doloribus delectus.</p>
+                </div>
+                <div>
+                    <h3 class="text-left mt-3">Features</h3>
+                    <ul class="text-left">
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur.</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                        <li>Lorem ipsum dolor sit, amet consectetur adipisicing.</li>
+                        <li>Lorem ipsum dolor sit.</li>
+                        <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet!</li>
+                    </ul>
+                </div>
+                <div class="text-justify">
+                    <p style="text-indent: 80px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi qui modi fugiat voluptatem accusamus tempora amet quas facilis, esse hic? Reprehenderit distinctio assumenda esse quos adipisci qui saepe ratione omnis ad impedit. Cumque, voluptatum voluptatem in fugit laborum repellendus eligendi?</p>
+                    <p style="text-indent: 50px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime voluptas eaque blanditiis accusantium tempore excepturi. Rem delectus quaerat ratione quam iste dolores placeat blanditiis expedita? Molestiae harum repudiandae doloribus delectus.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

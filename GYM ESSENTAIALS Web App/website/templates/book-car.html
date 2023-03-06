@@ -1,0 +1,119 @@
+<!--Extendind base.html-->
+
+{% extends "base.html" %}
+{% block title %} Car Booking - RoBoard {% endblock %}
+
+{% block content %}
+
+  <!--Contact Form-->
+  <div class="container-xxl">
+    <div class="row justify-content-around my-5 text-dark">
+       <div class="col-md-5 card card-columns px-3 py-5 shadow">
+            <div>
+                <h2 class="text-center mb-5">Search Products Information</h2>
+                <form action="" method="POST">
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="inputGroupSelect01"><i class="fab fa-atlassian"></i></label>
+                        <select class="form-select p-3" id="inputGroupSelect01" name="car_model">
+                        <option selected>Select...</option>
+                        <option value="GR-Supra">GR Supra Gloves</option>
+                        <option value="GR-86">WC RIGHT MEN'S SLIM FIT T-SHIRT</option>
+                        <option value="GT-IV">FUAARK Men's Slim Fit T-Shir</option>
+                        <option value="2000-GT">MUSCLEBLAZE CREATINE MONOHYDRATE</option>
+                        <option value="MK-IV">BIGMUSCLES NUTRITION PREMIUM GOLD</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-dark col-6 d-block mx-auto my-4" name="find_car_submit">Find Details</button>
+                </form>
+                {% if car %}
+                    <hr class="mb-5" style="margin: 0 auto;">
+                    <div class="card shadow-sm my-4 p-3" style="list-style: none;">
+                        <h3 class="text-center fw-bold text-danger">Car Details</h3>
+                        <p class="display-5">{% print(car.price) %}<sub class="ps-3 fs-6">*inclusive of all taxes.</sub></p>
+                        <li><b>Model : </b>{% print(car.model) %}</li>
+                        <li><b>Name : </b>{% print(car.car_name) %}</li>
+                        <li><b>Realease Year : </b>{% print(car.release_year) %}</li>
+                        <li><b>Description : </b>{% print(car.description) %}</li>
+                    </div>
+                {% endif %}
+            </div>
+             <!--Book Car Form-->
+            <hr width="80%" style="margin: 0 auto;">
+            <h2 class="text-center mt-5 text-danger fw-bold">Booking Information</h2>
+            <p class="fst-italic fs-5 text-center">Please enter the booking detailes below.</p>
+            <form method="POST" class="mt-3">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="Name" name="name">
+                    <label for="floatingInput">Name</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="tel" class="form-control" id="floatingInput" placeholder="mobile" name="mobile" pattern="[0-9]{10}">
+                    <label for="floatingInput">Mobile</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="Email" name="email">
+                    <label for="floatingInput">Email</label>
+                </div>
+
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="inputGroupSelect01"><i class="fab fa-atlassian"></i></label>
+                    <select class="form-select p-3" id="inputGroupSelect01" name="car_model">
+                    <option selected>Select you Products...</option>
+                    <option value="GR">GR Supra Gloves</option>
+                    <option value="GR 86">WC RIGHT MEN'S SLIM FIT T-SHIRT</option>
+                    <option value="GT4">FUAARK Men's Slim Fit T-ShirE</option>
+                    <option value="2000 GT">MUSCLEBLAZE CREATINE MONOHYDRATE</option>
+                    <option value="MK IV">BIGMUSCLES NUTRITION PREMIUM GOLD</option>
+                    </select>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col">
+                        <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="City" name="city">
+                        <label for="floatingInput">City</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Country" name="country">
+                        <label for="floatingInput">Country</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="Address" name="address">
+                    <label for="floatingInput">Delivary Address</label>
+                </div>
+
+                <button type="submit" class="btn btn-dark btn-lg col-6 my-4 float-right" name="book_car_submit"><i class="bi bi-gift-fill pe-3"></i>Book Now</button>
+            </form>
+
+       </div>
+       <div class="col-md-5 card p-5 shadow text-center text-dark">
+            <h1 class="logo mb-5 text-danger"><i class="bi bi-stars pe-3"></i>RoBoard<i class="bi bi-stars ps-3"></i></h1>
+            <div class="row">
+                <h1 class="fw-bold mb-4">Lookup Safety Recalls & Service Campaigns</h1>
+                <p class="fs-5 mb-5">Get information on open safety recalls and service campaigns released since 1999 for Toyota, Lexus and Scion vehicles intended for sale or sold in the U.S., U.S. Territories, and Mexico using our quick and easy recall and campaign lookup.</p>
+                <a href="" class="col-6 mx-auto btn btn-dark btn-lg fs-6 fw-bold">Safety Recall Lookup</a>
+            </div>
+            <hr class="my-5">
+            <div class="row">
+                <h1 class="fw-bold mb-4">Dealer Locator</h1>
+                <p class="fs-5 mb-5">Whether you're across town or across the country, use this feature to find the nearest Toyota dealer.</p>
+                <a href="" class="col-6 mx-auto btn btn-dark btn-lg fs-6 fw-bold">RoBoard INDIA</a>
+            </div>
+            <hr class="my-5">
+            <div class="row">
+                <h1 class="fw-bold mb-4">Additional Inquiries</h1>
+                <p class="fs-5 mb-5">If you have more questions about your Toyota, financing, registering as a journalist, or partnering with Toyota, scroll down to learn more.</p>
+            </div>
+        </div>
+    </div>
+  </div>
+  <!--Contact Form-->
+
+{% endblock %}
